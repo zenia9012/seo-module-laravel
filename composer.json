@@ -1,0 +1,26 @@
+{
+    "name": "yevhenii/seo",
+    "description": "Seo module for laravel project",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yevhenii Riabyi",
+            "email": "zenia9012@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Yevhenii\\Seo\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yevhenii\\Seo\\SeoServiceProvider"
+            ]
+        }
+    }
+}
