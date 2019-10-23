@@ -16,7 +16,7 @@ class SeoServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom( __DIR__ . '/database/migrations' );
         $this->loadViewsFrom( __DIR__ . '/resources/views', 'seo' );
-        $this->mergeConfigFrom(__DIR__ . '../config/seo.php', 'seo');
+        $this->mergeConfigFrom(__DIR__ . '/config/seo.php', 'seo');
 
         $this->publishes([__DIR__. '/database/migrations/' => database_path('migrations')]);
         $this->publishes([__DIR__. '/resources/views/' => resource_path('views/vendor/seo')]);
@@ -35,7 +35,7 @@ class SeoServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/seo.php', 'seo');
+        $this->mergeConfigFrom(__DIR__.'/config/seo.php', 'seo');
 
         // Register the service the package provides.
         $this->app->singleton('seo', function ($app) {
@@ -62,7 +62,7 @@ class SeoServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/seo.php' => config_path('seo.php'),
+            __DIR__.'/config/seo.php' => config_path('seo.php'),
         ], 'seo.config');
 
         // Publishing the views.
