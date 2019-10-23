@@ -1,26 +1,41 @@
 {
-    "name": "yevhenii/seo-module-laravel",
-    "description": "Seo module for laravel project",
-    "type": "composer-plugin",
+    "name": "yevhenii/seo",
+    "description": "Seo module for laravel websites",
     "license": "MIT",
+    "version": "0.1",
     "authors": [
         {
             "name": "Yevhenii Riabyi",
             "email": "zenia9012@gmail.com"
         }
     ],
+    "homepage": "https://github.com/zenia9012",
+    "keywords": ["Laravel", "Seo"],
     "minimum-stability": "dev",
-    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "~7.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3.0",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
     "autoload": {
         "psr-4": {
             "Yevhenii\\Seo\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Yevhenii\\Seo\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
                 "Yevhenii\\Seo\\SeoServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Seo": "Yevhenii\\Seo\\Facades\\Seo"
+            }
         }
     }
 }
