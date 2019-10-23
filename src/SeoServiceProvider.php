@@ -2,6 +2,7 @@
 
 namespace Yevhenii\Seo;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Yevhenii\Seo\Models\Seo;
 
@@ -75,7 +76,12 @@ class SeoServiceProvider extends ServiceProvider
      * share seo for current page
      */
     public function shareSeo() {
+        if (!Schema::hasTable('seos')){
+            return $this->ShareDefaultSeo();
+        }
+
         $slug = \Request::path();
+
         $seo  = Seo::slug( $slug );
 
         if ( $seo != null ) {
