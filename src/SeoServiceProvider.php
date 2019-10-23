@@ -76,26 +76,24 @@ class SeoServiceProvider extends ServiceProvider
      * share seo for current page
      */
     public function shareSeo() {
-        if (!Schema::hasTable('seos')){
-            return $this->ShareDefaultSeo();
-        }
+        if (Schema::hasTable('seos')){
+            $slug = \Request::path();
 
-        $slug = \Request::path();
+            $seo  = Seo::slug( $slug );
 
-        $seo  = Seo::slug( $slug );
-
-        if ( $seo != null ) {
-            view()->share( [
-                'seo_title'       => $seo->title,
-                'seo_description' => $seo->description,
-                'seo_keywords'    => $seo->keywords,
-                'og_image'        => $seo->og_image,
-                'og_title'        => $seo->og_title,
-                'og_description'  => $seo->og_description,
-                'og_type'         => $seo->og_type,
-            ] );
-        } else {
-            $this->ShareDefaultSeo();
+            if ( $seo != null ) {
+                view()->share( [
+                    'seo_title'       => $seo->title,
+                    'seo_description' => $seo->description,
+                    'seo_keywords'    => $seo->keywords,
+                    'og_image'        => $seo->og_image,
+                    'og_title'        => $seo->og_title,
+                    'og_description'  => $seo->og_description,
+                    'og_type'         => $seo->og_type,
+                ] );
+            } else {
+                $this->ShareDefaultSeo();
+            }
         }
     }
 
