@@ -1,16 +1,19 @@
 # Seo module for Laravel website
 
-## This package is just few meta tags
+## This package renders the meta tags and Open Graph tags
 
 Fields example:
 ``` bash
 <meta name="title" content="example">
 <meta name="description" content="example">
 <meta name="keywords" content="example">
+
 <meta property="og:title" content="example">
 <meta property="og:image" content="example">
 <meta property="og:description" content="example">
 <meta property="og:type" content="example">
+
+<title>example</title>
 ```
 
 Features:
@@ -36,10 +39,10 @@ php artisan vendor:publish --provider="Yevhenii\Seo\SeoServiceProvider::class"
 php artisan migrate
 ```
 
-## Usage 
+## Usage example
 
 Add this function to your blade wherever you need
 
 ```bash
-{!! Yevhenii\Seo\Models\Seo::seoBlock() !!}
+{!! \Yevhenii\Seo\Seo::seoBlock() !!}
 ```
