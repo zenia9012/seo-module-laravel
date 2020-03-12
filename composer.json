@@ -1,8 +1,7 @@
 {
     "name": "yevhenii/seo-module-laravel",
-    "description": "Seo module for websites on Laravel. The package creates a database, you can easily add SEO data to the database.",
+    "description": "Seo module for websites on Laravel.",
     "license": "MIT",
-    "version": "1.0.1",
     "authors": [
         {
             "name": "Yevhenii Riabyi",
@@ -10,8 +9,9 @@
         }
     ],
     "homepage": "https://github.com/zenia9012",
-    "keywords": ["Laravel", "Seo", "seo laravel", "seo admin"],
+    "keywords": ["laravel", "seo", "seo laravel", "seo admin", "laravel seo", "seo manager"],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "type": "composer-plugin",
     "require-dev": {
         "phpunit/phpunit": "~7.0",

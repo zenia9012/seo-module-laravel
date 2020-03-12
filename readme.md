@@ -2,6 +2,8 @@
 
 ## This package renders the meta tags and Open Graph tags
 
+#### The package creates a database, you can easily add SEO data to the database.
+
 Fields example:
 ``` bash
 <meta name="title" content="example">
