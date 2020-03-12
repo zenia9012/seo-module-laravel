@@ -6,3 +6,5 @@
 <meta property="og:image" content="{{ $og_image }}">
 <meta property="og:description" content="{{ $og_description }}">
 <meta property="og:type" content="{{ $og_type }}">
+
+<title>{{ $seo_title }}</title>

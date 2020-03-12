@@ -1,8 +1,8 @@
 {
     "name": "yevhenii/seo-module-laravel",
-    "description": "Seo module for laravel websites",
+    "description": "Seo module for websites on Laravel",
     "license": "MIT",
-    "version": "0.1",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Yevhenii Riabyi",
@@ -10,8 +10,9 @@
         }
     ],
     "homepage": "https://github.com/zenia9012",
-    "keywords": ["Laravel", "Seo"],
+    "keywords": ["Laravel", "Seo", "seo laravel", "seo admin"],
     "minimum-stability": "dev",
+    "type": "composer-plugin",
     "require-dev": {
         "phpunit/phpunit": "~7.0",
         "mockery/mockery": "^1.1",

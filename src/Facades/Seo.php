@@ -4,8 +4,8 @@ namespace Yevhenii\Seo\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class Seo extends Facade
-{
+class Seo extends Facade {
+
     /**
      * Get the registered name of the component.
      *
