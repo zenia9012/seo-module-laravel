@@ -26,7 +26,7 @@ Features:
 
 1) In your terminal:
 ``` bash
-composer require yevhenii/seo
+composer require yevhenii/seo-module-laravel
 ```
 2) Add to config/app.php  provider 
 
