@@ -1,6 +1,6 @@
 {
     "name": "yevhenii/seo-module-laravel",
-    "description": "Seo module for websites on Laravel.",
+    "description": "Seo tools module. Seo helpers package for websites on Laravel and Lumen",
     "license": "MIT",
     "authors": [
         {
@@ -9,7 +9,17 @@
         }
     ],
     "homepage": "https://github.com/zenia9012",
-    "keywords": ["laravel", "seo", "seo laravel", "seo admin", "laravel seo", "seo manager"],
+    "keywords": [
+        "laravel",
+        "seo",
+        "seo laravel",
+        "seo admin",
+        "laravel seo",
+        "seo manager",
+        "package",
+        "tools",
+        "helpers"
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "type": "composer-plugin",

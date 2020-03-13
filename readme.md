@@ -1,4 +1,4 @@
-# Seo module for Laravel website
+# Seo tools module. Seo helpers package for websites on Laravel and Lumen
 
 ## This package renders the meta tags and Open Graph tags
 
