@@ -12,5 +12,5 @@
 */
 
 Route::get('/seo/admin', function () {
-    return 'test';
+    return view('seo::admin.main');
 });
