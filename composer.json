@@ -1,6 +1,6 @@
 {
     "name": "yevhenii/seo-module-laravel",
-    "description": "Seo tools module. Seo helpers package for websites on Laravel and Lumen",
+    "description": "Seo tools module. Seo helpers manager package for websites on Laravel and Lumen",
     "license": "MIT",
     "authors": [
         {
