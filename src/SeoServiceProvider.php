@@ -20,11 +20,20 @@ class SeoServiceProvider extends ServiceProvider {
         $this->mergeConfigFrom(__DIR__ . '/config/seo.php', 'seo');
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
+        $this->publishes([
+            __DIR__.'/public/css/' => public_path('vendor/seo'),
+        ], 'public');
+
+        $this->publishes([
+            __DIR__.'/public/js/' => public_path('vendor/seo'),
+        ], 'public');
+
         $this->publishes([__DIR__ . '/database/migrations/' => database_path('migrations')]);
         $this->publishes([__DIR__ . '/resources/views/' => resource_path('views/vendor/seo')]);
         $this->publishes([__DIR__ . '/config/seo.php' => config_path('seo.php')]);
 
         $this->shareSeo();
+
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
         }
