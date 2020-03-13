@@ -18,6 +18,7 @@ class SeoServiceProvider extends ServiceProvider {
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'seo');
         $this->mergeConfigFrom(__DIR__ . '/config/seo.php', 'seo');
+        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
         $this->publishes([__DIR__ . '/database/migrations/' => database_path('migrations')]);
         $this->publishes([__DIR__ . '/resources/views/' => resource_path('views/vendor/seo')]);
