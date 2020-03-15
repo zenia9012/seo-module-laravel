@@ -3,6 +3,7 @@
 namespace Yevhenii\Seo\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Cookie;
 
 class AuthController extends Controller {
@@ -17,7 +18,9 @@ class AuthController extends Controller {
         if ($request->email == env('SEO_ADMIN_LOGIN') &&
             $request->password == env('SEO_ADMIN_PASSWORD')) {
 
-            session(['auth' => '1']);
+            $request->session()->regenerate();
+
+            session(['auth' => Hash::make($request->password)]);
 
             return redirect()->to(route('seo.admin.index'));
         }
