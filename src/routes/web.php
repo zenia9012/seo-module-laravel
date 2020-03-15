@@ -12,9 +12,12 @@
 */
 
 
-Route::middleware(['seo-auth'])->group(function () {
+Route::middleware(['web', 'seo-auth'])->group(function () {
     Route::get('/seo/admin', \Yevhenii\Seo\Http\Controllers\AdminController::class . '@index')->name('seo.admin.index');
 });
 
-Route::get('/seo/login', \Yevhenii\Seo\Http\Controllers\AuthController::class . '@login')->name('seo-login');
+Route::middleware(['web'])->group(function () {
+    Route::get('/seo/login', \Yevhenii\Seo\Http\Controllers\AuthController::class . '@showLogin')->name('seo-login');
+    Route::post('/seo/login', \Yevhenii\Seo\Http\Controllers\AuthController::class . '@login')->name('seo-login.login');
+});;
 

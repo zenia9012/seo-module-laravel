@@ -19,12 +19,12 @@ class SeoServiceProvider extends ServiceProvider {
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'seo');
         $this->mergeConfigFrom(__DIR__ . '/config/seo.php', 'seo');
-        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
 
         app('router')->aliasMiddleware('seo-auth', Authenticate::class);
 
-        $this->publishes([__DIR__.'/public/css/' => public_path('vendor/seo'),], 'public');
-        $this->publishes([__DIR__.'/public/js/' => public_path('vendor/seo'),], 'public');
+        $this->publishes([__DIR__ . '/public/css/' => public_path('vendor/seo'),], 'public');
+        $this->publishes([__DIR__ . '/public/js/' => public_path('vendor/seo'),], 'public');
         $this->publishes([__DIR__ . '/database/migrations/' => database_path('migrations')]);
         $this->publishes([__DIR__ . '/resources/views/' => resource_path('views/vendor/seo')]);
         $this->publishes([__DIR__ . '/config/seo.php' => config_path('seo.php')]);

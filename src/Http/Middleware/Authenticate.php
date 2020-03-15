@@ -2,20 +2,23 @@
 
 namespace Yevhenii\Seo\Http\Middleware;
 
-use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Closure;
 
-class Authenticate extends Middleware
-{
+class Authenticate {
+
     /**
-     * Get the path the user should be redirected to when they are not authenticated.
+     * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return string
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     * @return mixed
      */
-    protected function redirectTo($request)
+    public function handle($request, Closure $next)
     {
-        if (! $request->expectsJson()) {
-            return route('seo-login');
+        if (session()->get('auth') != 1) {
+            return redirect()->to(route('seo-login'));
         }
+
+        return $next($request);
     }
 }
