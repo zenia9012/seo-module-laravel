@@ -20,7 +20,7 @@
         "tools",
         "helpers"
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "type": "library",
     "require-dev": {
