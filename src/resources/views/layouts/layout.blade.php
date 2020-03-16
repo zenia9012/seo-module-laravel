@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
         @include('seo::admin.includes.css')
     </head>
     <body>
