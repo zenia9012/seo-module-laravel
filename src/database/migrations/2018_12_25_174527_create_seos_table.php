@@ -15,7 +15,7 @@ class CreateSeosTable extends Migration {
     {
         Schema::create('seos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('slug_page');
+            $table->string('slug_page')->unique();
             $table->longText('title')->nullable();
             $table->longText('description')->nullable();
             $table->longText('keywords')->nullable();

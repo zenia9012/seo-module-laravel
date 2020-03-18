@@ -30,7 +30,7 @@ class AuthController extends Controller {
 
             session(['auth' => Hash::make($request->password)]);
 
-            return redirect()->to(route('seo.admin.index'));
+            return redirect()->to(route('seo.admin.seo'));
         }
 
         return back()->withErrors(__('auth.failed'));

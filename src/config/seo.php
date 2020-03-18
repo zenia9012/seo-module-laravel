@@ -10,6 +10,7 @@ return [
     'og_type' => env('APP_NAME'),
 
     'show_columns' => [
+        // id is required, added automatically
         'slug_page',
         'title',
         'description',
@@ -19,4 +20,5 @@ return [
         'og_description',
         'og_type',
     ],
+
 ];

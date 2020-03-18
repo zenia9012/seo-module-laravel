@@ -31,6 +31,7 @@
                         @foreach($columns as $column)
                             <th>{{ $column }}</th>
                         @endforeach
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -41,6 +42,14 @@
                                 @foreach($columns as $column)
                                     <th>{{ $page->$column }}</th>
                                 @endforeach
+                                <th>
+                                    <a href="#" class="btn btn-info btn-sm">Update</a>
+                                    <form class="d-inline" method="post" action="{{ route('seo.admin.seo.destroy', $page->id) }}">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </th>
                             </tr>
                         @endforeach
 

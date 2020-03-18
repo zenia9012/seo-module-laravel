@@ -10,6 +10,8 @@ class Seo extends Model {
     public $timestamps = true;
     protected $table = 'seos';
 
+    public static $requiredField = ['id'];
+
     /**
      * get seo by slug page, if doesn't exists get seo for main page
      *

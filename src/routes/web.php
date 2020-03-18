@@ -13,9 +13,11 @@
 
 
 use Yevhenii\Seo\Http\Controllers\AuthController;
+use Yevhenii\Seo\Http\Controllers\SeoAdminController;
 
 Route::middleware(['web', 'seo-auth'])->group(function () {
-    Route::get('/seo/admin', \Yevhenii\Seo\Http\Controllers\AdminController::class . '@index')->name('seo.admin.index');
+    Route::delete('/seo/admin/seo/{seo}', SeoAdminController::class . '@delete')->name('seo.admin.seo.destroy');
+    Route::get('/seo/admin/seo', SeoAdminController::class . '@index')->name('seo.admin.seo');
 });
 
 Route::middleware(['web'])->group(function () {
@@ -23,4 +25,6 @@ Route::middleware(['web'])->group(function () {
     Route::post('/seo/login', AuthController::class . '@login')->name('seo-login.login');
     Route::get('/seo/logout', AuthController::class . '@logout')->name('seo-login.logout');
 });;
+
+Route::resource('photo', AuthController::class);
 
